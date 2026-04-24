@@ -1,0 +1,17 @@
+{
+  "name": "vakilconnect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "India's legal marketplace — zero-dependency Node.js server",
+  "main": "local-dev/server-nodeps.js",
+  "scripts": {
+    "start": "node --experimental-sqlite local-dev/server-nodeps.js",
+    "dev": "node --experimental-sqlite local-dev/server-nodeps.js",
+    "test": "node local-dev/test-api.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "author": "Deepu <sukoonpad@gmail.com>",
+  "license": "UNLICENSED"
+}
