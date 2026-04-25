@@ -1,25 +1,18 @@
 # Render.com Blueprint — deploys the zero-dependency VakilConnect server.
-# Sign up at https://render.com, click "New → Blueprint", connect your GitHub
-# repo, and Render will read this file and spin up the service automatically.
-
 services:
   - type: web
     name: vakilconnect
     runtime: node
     plan: free
     region: singapore
-    # No dependencies to install — the server uses only Node.js built-ins.
     buildCommand: "echo 'No build step required — zero-dep server'"
-    startCommand: "node --experimental-sqlite local-dev/server-nodeps.js"
+    startCommand: "node --experimental-sqlite server-nodeps.js"
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
-      # Node 22.5+ is required for built-in node:sqlite.
       - key: NODE_VERSION
         value: 22.12.0
-      # JWT signing secret — Render generates a strong random value automatically.
       - key: JWT_SECRET
         generateValue: true
-      # Production mode flag (the server reads this if present).
       - key: NODE_ENV
         value: production

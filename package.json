@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "India's legal marketplace — zero-dependency Node.js server",
-  "main": "local-dev/server-nodeps.js",
+  "main": "server-nodeps.js",
   "scripts": {
-    "start": "node --experimental-sqlite local-dev/server-nodeps.js",
-    "dev": "node --experimental-sqlite local-dev/server-nodeps.js",
-    "test": "node local-dev/test-api.js"
+    "start": "node --experimental-sqlite server-nodeps.js",
+    "dev": "node --experimental-sqlite server-nodeps.js"
   },
   "engines": {
     "node": ">=22.5.0"
